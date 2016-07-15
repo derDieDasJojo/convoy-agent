@@ -11,6 +11,7 @@ RUN mkdir -p /var/lib/rancher/convoy-agent && \
 ENV PATH /var/lib/rancher/convoy-agent:$PATH
 
 RUN curl -sSL -o convoy-agent.tar.gz https://github.com/rancher/convoy-agent/releases/download/v0.9.0/convoy-agent.tar.xz && tar -xf convoy-agent.tar.gz && mv ./convoy-agent /var/lib/rancher/convoy-agent
+COPY convoy /var/lib/rancher/convoy
 #COPY convoy-agent /var/lib/rancher/convoy-agent
 COPY launch /
 
